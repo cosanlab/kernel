@@ -4,10 +4,14 @@
 format: jb-book
 root: intro
 parts:
-- chapters: 
-  - acquiring_data
-- chapters:
-  - file: analyzing_data
-  - file: FingerTapping
-- chapters:
-  - file: faq
+  - caption: Acquiring Data
+    numbered: False
+    chapters: 
+      - file: acquiring_data
+  - caption: Analyzing Data
+    chapters:
+      - file: analyzing_data
+      - file: FingerTapping
+  - caption: FAQ
+    chapters:
+      - file: faq
