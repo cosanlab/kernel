@@ -1,12 +1,5 @@
-# Questions for Kernel
-- Is reconstruction resampled to 1hz?
-- Is reconstruction start on the onset of 'start_experiment' and end at the end of the experiment? (start_experiment duration)
-- In the SNIRF file, do the block onsets correpond to start of experiment?  or the start of the recording?
-- How are bad channels treated?
-- Is there any way to get the signal quality from each sensor from calibration?
-- Is there any way to get ROI locations of each module?
-
-ur answers are below. Glad to see you are having fun with the device!
+# FAQ
+These are answers to questions from Kernel Support
  
 1) Nifti Reconstruction:
 - is the nifti reconstruction resampled to 1hz?
@@ -17,9 +10,6 @@ Yes, the data is resampled to 1hz before source reconstruction.
 
 There is a field in the nifti header, `toffset`, which indicates the time of the first volume, with the same reference as the events. Note that the recording is cropped to 1s before the `start_experiment` trigger and 1s after the `end_experiment` trigger as part of the export.
 
-- do you have any recommendations for how to deal with the signal inhomogeneities across channels? We are finding that the PFC channels have a lot of variance, but not the sensorimotor channels, which probably has to do with the dark hair color of our participant.
-
-I’m not entirely sure I understand the question, which mentions channels yet is nested under the NIfTI reconstruction heading.
 
 2) SNIRF file:
 - unlike the reconstruction file, I'm assuming that the start time corresponds to the start of the data recording and that each event time corresponds to the onset of the recording?
@@ -45,17 +35,16 @@ Yes, there was some progress a while back, but it stalled. Until now it hasn’t
 4) Is there any where to get more details about the preprocessing that has been done to each of the different files beyond the details in the Flow2 preprints? I found references to community.kernel.com, but this page doesn't seem to work anymore.
 
 We’re actually in the process of moving the contents of that (defunct) page to our Kernel docs. In short:
-SNIRF: Moments. This is a fairly raw output, minimally preprocessed
-Trim the data to the events (1s before first, 1s after last)
-Remove bad channels (based on shape of histogram, counts)
-Remove histogram noise floor (“dark counts”)
-Compute moments (sum, mean and variance of the time-of-flight histograms)
-SNIRF: Hb Moments. This is a more processed output. We continue the processing:
-Convert moment changes to hb changes, using a 2-layer slab (12mm scalp) and sensitivities from a FEM model
-Motion artifact correction: using TDDR, followed by cubic spline interpolation of remaining spikes
-Global Superficial signal regression, using signal from short channels (8mm)
-SNIRF: Gated. This is destined to people who want to try something else than moments (time gates, or curve fitting) for their analysis. It starts like SNIRF: Moments, then instead of converting to moments:
-     4. Deconvolution (using FFT) of the real-time IRF from the histograms
+- SNIRF: Moments. This is a fairly raw output, minimally preprocessed
+- Trim the data to the events (1s before first, 1s after last)
+- Remove bad channels (based on shape of histogram, counts)
+- Remove histogram noise floor (“dark counts”)
+- Compute moments (sum, mean and variance of the time-of-flight histograms)
+- SNIRF: Hb Moments. This is a more processed output. We continue the processing:
+- Convert moment changes to hb changes, using a 2-layer slab (12mm scalp) and sensitivities from a FEM model
+- Motion artifact correction: using TDDR, followed by cubic spline interpolation of remaining spikes
+- Global Superficial signal regression, using signal from short channels (8mm)
+- SNIRF: Gated. This is destined to people who want to try something else than moments (time gates, or curve fitting) for their analysis. It starts like SNIRF: Moments, then instead of converting to moments: Deconvolution (using FFT) of the real-time IRF from the histograms
 Reconstruction. This is as described in our recent biorxiv preprint. We use the moments, then downsample to 1Hz, and solve an inverse problem using Tikhonov regularization to constrain the solution.
 I hope this helps. Note that these pipelines are subject to change (which we will track in release notes), as we find better ways to process the signal.
 
@@ -66,3 +55,13 @@ We’ve been using the standard glover HRF provided by nilearn. Our take is that
 6) Do you have any recommendations for plotting heatmaps of the Reconstructed data? I've just been averaging over the z-dimension, but that doesn't seem to be the most ideal.
 
 Just use your favorite fMRI visualization software for the NIfTI reconstructions. This is in MNI space. Can paint on the surface too.
+
+7) Is there an API for accessing web portal?
+
+here's a fast way to download all the SNIRF files from a study via https://docs.kernel.com/docs/downloading-datasets and running the script within the zip file.
+ 
+Exposing our API is on our roadmap and we can see if we can prioritize it. Just to clarify, you are looking for:
+- List all dataset ids and metadata in a study
+- Given a dataset id, submit a pipeline
+- Given a pipeline run id, get its status
+- Given a pipeline run id, download its outputs

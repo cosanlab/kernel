@@ -1,4 +1,4 @@
-# Instructions for Acquiring Data
+# Acquiring Data
 Read the [Kernel documentation](https://docs.kernel.com/docs/handling-the-flow2-headset) for how to acquire data.
 
 We are currently using the CIM laptop that has the kortex acquisition driver installed.
