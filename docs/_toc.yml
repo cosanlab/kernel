@@ -3,7 +3,11 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: acquiring_data
-- file: analyzing_data
-- file: faq
+parts:
+- chapters: 
+  - acquiring_data
+- chapters:
+  - file: analyzing_data
+  - file: FingerTapping
+- chapters:
+  - file: faq

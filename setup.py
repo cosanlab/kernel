@@ -4,7 +4,7 @@ with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 version = {}
-with open("feat/version.py") as f:
+with open("kernel/version.py") as f:
     exec(f.read(), version)
 
 extra_setuptools_args = dict(tests_require=["pytest"])
