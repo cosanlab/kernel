@@ -1,7 +1,0 @@
--r requirements.txt
-pytest
-pytest-cov
-coveralls
-pycodestyle
-black==24.4.2
-jupyter-book
