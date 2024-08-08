@@ -1,0 +1,8 @@
+nibabel
+h5py
+mne
+nltools
+matplotlib
+seaborn
+numpy
+pandas
