@@ -16,6 +16,12 @@ TD fNIRS uses time gating to discriminate the photons arriving to the detector a
 
 A common way to summarize information from time-of-flight histograms is to compute the first three moments of the histogram corresponding to the total counts (sum), mean time-of-flight (first moment), and variance of the times of flight (second central moment). Moments have a convenient property: the moments of the DTOF can be obtained from calculating the moments of the TPSF and of the IRF straightforwardly. Accordingly, with Flow2, system drift in the DTOF moments can be corrected for, using the internal IRF detector. However, the instrument response function (IRF) can complicate data interpretation in TD-fNIRS. To address this, moment analysis of the distribution of times of flight (DTOF) has been proposed as an alternative to time gates analysis. Higher statistical moments of the DTOF show increased sensitivity to deeper tissue layers.
 
+{image} images/flow2.png
+
+
+## Flow 2
+
+{image} images/DTOF.png
 
 ## Resources
 

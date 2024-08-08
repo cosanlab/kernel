@@ -1,7 +1,15 @@
-# Job (3): Build and deploy docs
+name: Build & Deploy Jupyter Book
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your default branch if it's different
+
+jobs:
   docs:
     name: Build & deploy docs
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -13,18 +21,21 @@
 
       - name: Upgrade pip
         run: |
-          # install pip=>20.1 to use "pip cache dir"
-          python3 -m pip install --upgrade pip
+          python -m pip install --upgrade pip
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
-          python3 -m pip install . -r requirements.txt
-          python3 -m pip install -r ./requirements-dev.txt
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
       - name: Build book
         run: |
           jupyter-book build docs
-          # echo 'py-feat.org' > ./docs/_build/html/CNAME
+
+      - name: Debug - List files
+        run: |
+          ls -la
+          ls -la docs/_build/html
 
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
