@@ -3,7 +3,7 @@
 
 title: Working with Kernel
 author: Luke Chang
-logo: kernel-logo-white.webp
+logo: CIM_Logo_Icon_Yellow.png
 exclude_patterns: [ README.md, _build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", "**/*/figure.ipynb"]
 
 # Force re-execution of notebooks on each build.
