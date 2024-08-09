@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Acquiring Data" href="acquiring_data.html" />
+    <link rel="next" title="Measurement" href="signal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,18 +180,26 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acquiring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Signal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="signal.html">Measurement</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Acquisition</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acquiring_data.html">Acquiring Data</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Available Tasks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyzing Data</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analysis</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="analyzing_data.html">Analyzing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FingerTapping.html">Analyze Finger Tapping Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing &amp; Development</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="development.html">Future Development</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Helpful Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 
@@ -236,18 +244,50 @@
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/cosanlab/kernel" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-
+<span class="btn__text-container">Repository</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel/edit/main/docs/intro.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
 
 
 
@@ -362,10 +402,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2">Flow 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a><ul class="nav section-nav flex-column">
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -392,50 +428,29 @@ document.write(`
 <h3>Quantitative Information:<a class="headerlink" href="#quantitative-information" title="Link to this heading">#</a></h3>
 <p>TD fNIRS uses time gating to discriminate the photons arriving to the detector as a function of their time of flight. As photons traveling longer distances are more likely to have reached deeper layers of the tissue, TD-fNIRS has increased sensitivity to the brain hemodynamics when longer-traveling photons are selected. However, this advantage over CW fNIRS is limited in real instrumentation by the instrument response function (IRF), which causes a broadening of the distribution of times of flight (DTOF), complicating the inter- pretation of the time gates. Moment analysis of the DTOF, which is relatively immune to the IRF, has been proposed as an alternative to time gates analysis in TD-fNIRS. Higher statistical moments of the DTOF present increased sensitivity to deeper tissue layers compared to signal intensity changes as the kernel for the moment calculation grows as a function of the time of flight.</p>
 <p>A common way to summarize information from time-of-flight histograms is to compute the first three moments of the histogram corresponding to the total counts (sum), mean time-of-flight (first moment), and variance of the times of flight (second central moment). Moments have a convenient property: the moments of the DTOF can be obtained from calculating the moments of the TPSF and of the IRF straightforwardly. Accordingly, with Flow2, system drift in the DTOF moments can be corrected for, using the internal IRF detector. However, the instrument response function (IRF) can complicate data interpretation in TD-fNIRS. To address this, moment analysis of the distribution of times of flight (DTOF) has been proposed as an alternative to time gates analysis. Higher statistical moments of the DTOF show increased sensitivity to deeper tissue layers.</p>
-<p><img alt="flow2" src="images/flow2.png" /></p>
+<p><img alt="flow2" src="_images/DTOF.png" /></p>
 </section>
 </section>
 <section id="flow-2">
 <h2>Flow 2<a class="headerlink" href="#flow-2" title="Link to this heading">#</a></h2>
-<p><img alt="dtof" src="_images/DTOF.png" /></p>
+<p>The Kernel Flow2 is an advanced time-domain functional near-infrared spectroscopy (TD-fNIRS) system designed for brain imaging. It uses time gating to discriminate photons based on their time of flight, potentially increasing sensitivity to brain hemodynamics compared to continuous-wave fNIRS, especially when selecting longer-traveling photons.</p>
+<p>The system consists of 40 modules arranged in a headset covering frontal, parietal, temporal, and occipital cortices. Each module contains 3 dual-wavelength sources and 6 detectors, plus a central detector for continuous instrument response function (IRF) monitoring. The modules provide multiple source-detector distances (8.5mm, 17.9mm, and 26.5mm), allowing for measurements at different depths. In total, the system offers 2,565 possible channels with source-detector separations ≤ 50mm.
+The module optics are carefully designed to conduct laser light into the scalp and couple returning light to detectors. They use spring-loaded light pipes to conform to head curvature and reduce interference from hair. Each light pipe is optically isolated to prevent crosstalk. The source optics use a two-lens system with integrated micro-prisms to direct and homogenize light. Similarly, the detector optics use a two-lens system to maintain constant received optical intensity regardless of spring compression.
+A critical feature is the continuous IRF monitoring. Each module has a dedicated IRF detector that captures light directly from the lasers without passing through tissue. This provides reliable estimates of IRF contributions from both detectors and lasers, helping to account for variations due to temperature and voltage changes.</p>
+<p>The system uses temporal multiplexing of lasers to avoid optical crosstalk. It operates in a 38-state pattern, completing a full cycle of data collection for all modules and wavelengths every 76 histograms. This results in a system sampling frequency of 3.76 Hz, with each source operating at 7.52 Hz in the full headset configuration. The integration time for constructing histograms is set at 3.5ms, allowing for a histogram sampling rate of 285.7 Hz per wavelength.</p>
+<p>The Flow2 system incorporates custom-designed detector ASICs with integrated time-to-digital circuitry, capable of handling high photon count rates exceeding 5 Gcps. A novel band-pass coating on the detector packages helps filter out unwanted wavelengths, optimizing signal-to-noise ratio.</p>
+<p><img alt="dtof" src="_images/Flow2.png" /></p>
 </section>
-<section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
-<p>We recommend reading the Kernel preprint on the <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2024.04.30.591765v1.abstract">validation</a> and <a class="reference external" href="https://www.nature.com/articles/s41598-024-68555-9">reliability</a> of the Flow2 system.</p>
-<ul class="simple">
-<li><p><a class="github reference external" href="https://github.com/GriffithsLab/kernel-flow-tools">GriffithsLab/kernel-flow-tools</a></p></li>
-<li><p><a class="reference external" href="https://openfnirs.org/community/">https://openfnirs.org/community/</a></p></li>
-<li><p>mne discussion about snirf compatibility <a class="github reference external" href="https://github.com/mne-tools/mne-python/pull/9661">mne-tools/mne-python#9661</a></p></li>
-<li><p>pysnirf2 <a class="github reference external" href="https://github.com/BUNPC/pysnirf2/tree/main">BUNPC/pysnirf2</a></p></li>
-</ul>
-</section>
-<section id="development">
-<h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>going to need something to create BIDS formatted fNIRS datasets</p></li>
-<li><p>going to need to write a data importer for nltools</p></li>
-</ul>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acquiring Data</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="acquiring_data.html">Acquiring Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="acquiring_data.html#available-unity-tasks">Available Unity Tasks</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyzing Data</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="analyzing_data.html">Analyzing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FingerTapping.html">Analyze Finger Tapping Data</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-</ul>
 </div>
-</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -469,11 +484,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="acquiring_data.html"
+       href="signal.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Acquiring Data</p>
+        <p class="prev-next-title">Measurement</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,10 +514,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-2">Flow 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a><ul class="nav section-nav flex-column">
-</ul>
-</li>
 </ul>
   </nav></div>
 

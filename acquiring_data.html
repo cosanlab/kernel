@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'acquiring_data';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Analyzing Data" href="analyzing_data.html" />
-    <link rel="prev" title="Kernel Evaluation" href="intro.html" />
+    <link rel="next" title="Available Tasks" href="tasks.html" />
+    <link rel="prev" title="Measurement" href="signal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,18 +179,26 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acquiring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Signal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="signal.html">Measurement</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Acquisition</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Acquiring Data</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Available Tasks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyzing Data</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analysis</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="analyzing_data.html">Analyzing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FingerTapping.html">Analyze Finger Tapping Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing &amp; Development</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="development.html">Future Development</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Helpful Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
 
@@ -235,18 +243,50 @@
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/cosanlab/kernel" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-
+<span class="btn__text-container">Repository</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel/edit/main/docs/acquiring_data.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
 
 
 
@@ -355,23 +395,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Acquiring Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#available-unity-tasks">Available Unity Tasks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breath-hold-task">Breath Hold task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-auditory-task">Passive Auditory task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finger-tapping-task">Finger Tapping task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#go-no-go-task-paradigm">Go/No-Go task paradigm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal">Signal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-changes-in-hbo-and-hbr-concentrations-moments-method">Relative changes in HbO and HbR concentrations (moments method)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-concentrations-of-hbo-and-hbr-curve-fitting-method">Absolute concentrations of HbO and HbR (curve fitting method)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-reconstruction-algorithm">DOT reconstruction algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedures">Procedures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -387,72 +413,13 @@ document.write(`
 <p>Read the <a class="reference external" href="https://docs.kernel.com/docs/handling-the-flow2-headset">Kernel documentation</a> for how to acquire data.</p>
 <p>We are currently using the CIM laptop that has the kortex acquisition driver installed.</p>
 <p>All software and data can be accessed via kernel <a class="reference external" href="https://portal.kernel.com/">web portal</a>.</p>
+<section id="procedures">
+<h2>Procedures<a class="headerlink" href="#procedures" title="Link to this heading">#</a></h2>
+<p>Please read the short <a class="reference external" href="https://docs.kernel.com/docs/handling-the-flow2-headset">documentation</a> on the kernel website about how to set up the Flow2 and acquire data.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="available-unity-tasks">
-<h1>Available Unity Tasks<a class="headerlink" href="#available-unity-tasks" title="Link to this heading">#</a></h1>
-<section id="breath-hold-task">
-<h2>Breath Hold task<a class="headerlink" href="#breath-hold-task" title="Link to this heading">#</a></h2>
-<p>This task was programmed and presented in Unity. The participant was asked to switch between interleaved periods of holding their breath and periods of paced breathing. During each paced breathing block (30 sec) a bright green circle on a black background repeatedly expanded and contracted at a fixed pace (6 sec per cycle), and the participant was instructed to use this animation to guide their inhalation and exhalation respectively (5 breathing cycles were repeated in each block). At the end of paced breathing blocks the circle changed to yellow, signaling to the participant that this would be their final exhalation and the breath hold period would occur next. During each breath hold block (20 sec) the fully contracted yellow circle remained on the screen, above which the words “Hold your breath!” were displayed. Below the yellow circle a countdown to zero indicating the time left in the block was displayed. When the countdown timer hit zero, the circle turned back to bright green and paced breathing immediately commenced. This was repeated such that the participant completed a total of 6 breath hold blocks and 6 paced breathing blocks.</p>
-</section>
-<section id="passive-auditory-task">
-<h2>Passive Auditory task<a class="headerlink" href="#passive-auditory-task" title="Link to this heading">#</a></h2>
-<p>This task was programmed and presented in Unity. The task had a block design with two block types: story blocks (n=8) during which the participant listened to short clips from TED talks; and noise blocks (n=7) during which the participant listened to brown noise. After an initial 10s rest period, the story and noise blocks (each lasting for 20s) were presented (via earbuds) in a preset pseudo-randomized order (Fig. 6B). The participant was asked to keep their eyes open and look at a white fixation cross that was presented on a black background throughout the task.</p>
-</section>
-<section id="finger-tapping-task">
-<h2>Finger Tapping task<a class="headerlink" href="#finger-tapping-task" title="Link to this heading">#</a></h2>
-<p>This task was programmed and presented in Unity. In this task the participant was asked to sit in a chair with their arms on the armrests such that their palms faced upwards, while audio and visual stimuli guided them through randomized periods of left and right–hand finger tapping (n = 10 blocks per side; Fig. 6E). Specifically, at the start of each block the participant was cued in two ways: 1) audibly – brown noise was played through earbuds to either the right or left ear indicating the hand that should be used during the task, and 2) visually – a white image of a hand was displayed on a black screen with either an “L” or an “R” inscribed on it, again indicating the left or right hand should be used. Both cues persisted throughout the block (17.3 sec). Within each block the participant was asked to repeatedly tap the thumb of the cued hand to a certain finger on the same hand. A red dot overlaid on a finger of the visual stimulus indicated which finger to tap. Throughout a block the red dot moved sequentially through each of the four fingers, and each shift to a new finger indicated a new trial (n = 13 trials per block; trial duration = 0.75 sec and inter-trial interval = 0.50 sec). A brief resting period (20 sec) with a white fixation cross on a black screen followed each block.</p>
-</section>
-<section id="go-no-go-task-paradigm">
-<h2>Go/No-Go task paradigm<a class="headerlink" href="#go-no-go-task-paradigm" title="Link to this heading">#</a></h2>
-<p>The task, designed and presented using Unity game engine, consisted of two block types: go-only and go/no-go. The overall structure of the task was similar to the one used in a prior publication38. Briefly, participants completed a total of 10 blocks alternating between go-only (n = 5) and go/no-go (n = 5) with each block consisting of 24 trials. Stimuli were green leaf cartoon images (for go trials) and red flower images (for no-go trials) that were presented in a pseudorandom order, which was pre-set and unique for each run. During go/no-go blocks, 30% of the trials were chosen to be no-go trials. A different run of the task was presented at each study visit, however, all participants completed the same versions in the same order.</p>
-<p>The task included a 15 s rest at the beginning and a 20 s rest at the end. The task also included a screen to remind the participant of task instructions (e.g. pressing the spacebar when seeing a green leaf and refraining from pressing when seeing a red flower) prior to each block. Stimulus presentation time was 400 ms followed by a 600 ms ± 100 ms inter-trial interval during which only the background was displayed. Participants were asked to provide a response within the 400 ms presentation period. A pleasant (ding) or unpleasant (buzzer) tone, played immediately after participants’ response, was used to provide positive (for hits) and negative feedback (for false-alarms), respectively. The overall task duration was approximately 7 min (Fig. 1c).</p>
-</section>
-<section id="signal">
-<h2>Signal<a class="headerlink" href="#signal" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Moments provides the time courses for each channel:</p>
-<ul>
-<li><p>0th moment: integral (# photons, from 0 to ~1e7),</p></li>
-<li><p>1st moment: mean time of flight (mean time of flight, in picoseconds is on the order of 1000)</p></li>
-<li><p>2nd moment: variance of time-of-flight (variance of time of flight, in picoseconds^2 is on the order of 100000)</p></li>
-</ul>
-</li>
-<li><p>Hb/Moments includes an analysis indicating concentration of HbO (oxyhemoglobin) and HbR (deoxyhemoglobin).</p></li>
-<li><p>Gating - Time Gating</p></li>
-<li><p>Reconstruction - HD-DOT</p></li>
-</ul>
-</section>
-<section id="preprocessing">
-<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Data conditioning (calibration correction)</p></li>
-<li><p>Data processing (Filtering, De-trending)</p></li>
-<li><p>Select good channels based on channel quality check</p></li>
-<li><p>Convert to log contrast</p></li>
-<li><p>Select histogram bins with contrast</p></li>
-<li><p>Load atlas head mesh</p></li>
-<li><p>Run forward model to get TPSFs, fluences, and Jacobians</p></li>
-<li><p>Perform Jacobian normalization and regularization</p></li>
-<li><p>Crop to valid channels and histogram bins</p></li>
-<li><p>Invert Jacobian</p></li>
-<li><p>Use fully processed data together with inverse Jacobian to generate reconstruction of mu_a and mu_s’ per wavelength</p></li>
-<li><p>Use extinction coefficients to generate 3D map of HbO and HbR</p></li>
-<li><p>Note that we are performing reconstruction using a linearized model (as developed in the attached paper), which provides estimates of relative changes in HbO and HbR (not yet absolute estimates).</p></li>
-<li><p>We do the reconstruction on the full time-domain data using histograms. We’ve invested heavily in developing our reconstruction pipelines to fully utilize our data and are constantly working to improve its accuracy and performance so that it scales well. Our objective is to provide our customers with the best volumetric data that can then be analyzed in any NIfTI-compatible SW.</p></li>
-</ul>
-<section id="relative-changes-in-hbo-and-hbr-concentrations-moments-method">
-<h3>Relative changes in HbO and HbR concentrations (moments method)<a class="headerlink" href="#relative-changes-in-hbo-and-hbr-concentrations-moments-method" title="Link to this heading">#</a></h3>
-<p>The data preprocessing procedures have been extensively detailed in our previous studies (15). Initially, we applied a channel selection method based on histogram shape criteria (14). Subsequently, histograms derived from the chosen channels were utilized to calculate the moments of the DTOFs, specifically focusing on the sum, mean, and variance moments. The alterations in preprocessed DTOF moments were then translated into changes in absorption coefficients for each wavelength, employing the sensitivities of the various moments to absorption coefficient changes, as outlined in (13). To determine these sensitivities, a 2-layer medium with a superficial layer of 12 mm thickness was employed. Utilizing a finite element modeling (FEM) forward model from NIRFAST (58, 59), the Jacobians (sensitivity maps) for each moment were integrated within each layer to assess sensitivities. The changes in absorption coefficients at each wavelength were further converted into alterations in oxyhemoglobin and deoxyhemoglobin concentrations (HbO and HbR, respectively), employing the extinction coefficients for the respective wavelengths and the modified Beer–Lambert law (mBLL (60)). The HbO/HbR concentrations underwent additional preprocessing through a motion correction algorithm known as Temporal Derivative Distribution Repair (TDDR (61)). To address spiking artifacts arising from baseline shifts during TDDR, they were identified and rectified using cubic spline interpolation (62). Lastly, data detrending was performed using a moving average with a 100-second kernel, and short channel regression was employed to eliminate superficial physiological signals from brain activity (63), utilizing short within-module channels with a source-detector separation (SDS) of 8.5 mm.</p>
-</section>
-<section id="absolute-concentrations-of-hbo-and-hbr-curve-fitting-method">
-<h3>Absolute concentrations of HbO and HbR (curve fitting method)<a class="headerlink" href="#absolute-concentrations-of-hbo-and-hbr-curve-fitting-method" title="Link to this heading">#</a></h3>
-<p>The DTOF results from convolving the time-resolved TPSF with the IRF. Utilizing Flow2’s online IRF measurements, we employed a curve fitting technique to extract the absolute optical properties of the tissue beneath. Generating candidate TPSFs through an analytical solution of the diffusion equation for a homogeneous semi-infinite medium, we convolved these with the known IRF and compared them with the recorded DTOF. The search for optical properties was carried out using the Levenberg-Marquardt algorithm, focusing on fitting within the range spanning from 80% of the peak on the rising edge to 0.1% of the peak on the falling edge, with a refractive index set to 1.4. These absorption coefficient estimates were then converted to HbO and HbR concentrations. A single value for HbO and HbR was obtained by computing the median value across well-coupled long, within-module channels (SDS=26.5mm) of two prefrontal modules.</p>
-</section>
-<section id="dot-reconstruction-algorithm">
-<h3>DOT reconstruction algorithm<a class="headerlink" href="#dot-reconstruction-algorithm" title="Link to this heading">#</a></h3>
-<p>A finite element model (FEM) of the adult head was developed based on the unbiased non-linear averages of the MNI 152 database (49). The atlas was segmented to 5 tissue types of skin, skull, CSF, gray and white matter and discretized into linear tetrahedral elements using NIRFASTSlicer, giving rise to 413,403 nodes and 2,465,366 elements. Optical properties of each tissue layer at each wavelength (690 nm and 905 nm) were assigned based on published values of the adult head (29). The coordinates for each of the 40 modules containing the optical sources and detectors were determined and identified on the surface of the FEM and the time-resolved light propagation model was solved using the diffusion approximation to the light transport equation throughout the domain (58). The Jacobians (sensitivity functions that map a change in measured data due to a change in optical properties) for the time-resolved data (TPSF) for each optical parameter (μa and μs′) were calculated using the adjoint theorem (64) at each wavelength and then interpolated to a uniform voxel grid (also known as reconstruction basis) spanning the entire model, with a resolution of 4 × 4 × 4 mm. The use of lower resolution reconstruction basis is crucial for DOT as the problem is highly under-determined: that is the number of measurements is much lower than the number of unknowns. While a high resolution FEM mesh is needed for the calculation of the time-resolved light propagation to ensure numerical accuracy, a much lower voxel resolution is needed to better improve the stability of the inverse problem.
-The time-resolved Jacobian for each optical property was then mapped to each data-type (intensity, mean time of flight and variance) which was then normalized with respect to their corresponding data. A Moore–Penrose pseudoinverse with Tikhonov regularization was used to calculate an approximation of the inverse of the Jacobian to perform a single step linear recovery of the optical properties (29) using the same functional data as outlined earlier. Note that we downsampled the data to 1Hz before performing reconstruction. The recovered changes in the μa within each voxel were mapped to changes to oxy/deoxy hemoglobin for further processing using the same GLM model described above. Lastly, in addition to GLM analyses, we performed an epoched analysis. Here, we considered different ROIs given the task: voxels within 10 mm of the left motor area with the maximum GLM contrast for the finger tapping task and voxels within 10 mm of the left auditory region with maximum GLM contrast for the passive auditory task. The time course of these ROIs were then epoched and aggregated within each block type for further visualization (Fig. 7).</p>
-</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
+<p>So far we are finding that dark colored hair is making it difficult to acquire data.</p>
 </section>
 </section>
 
@@ -487,20 +454,20 @@ The time-resolved Jacobian for each optical property was then mapped to each dat
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="signal.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Kernel Evaluation</p>
+        <p class="prev-next-title">Measurement</p>
       </div>
     </a>
     <a class="right-next"
-       href="analyzing_data.html"
+       href="tasks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Analyzing Data</p>
+        <p class="prev-next-title">Available Tasks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -520,23 +487,9 @@ The time-resolved Jacobian for each optical property was then mapped to each dat
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Acquiring Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#available-unity-tasks">Available Unity Tasks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#breath-hold-task">Breath Hold task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passive-auditory-task">Passive Auditory task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finger-tapping-task">Finger Tapping task</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#go-no-go-task-paradigm">Go/No-Go task paradigm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal">Signal</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing">Preprocessing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-changes-in-hbo-and-hbr-concentrations-moments-method">Relative changes in HbO and HbR concentrations (moments method)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-concentrations-of-hbo-and-hbr-curve-fitting-method">Absolute concentrations of HbO and HbR (curve fitting method)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-reconstruction-algorithm">DOT reconstruction algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedures">Procedures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

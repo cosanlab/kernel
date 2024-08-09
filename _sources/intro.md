@@ -16,25 +16,18 @@ TD fNIRS uses time gating to discriminate the photons arriving to the detector a
 
 A common way to summarize information from time-of-flight histograms is to compute the first three moments of the histogram corresponding to the total counts (sum), mean time-of-flight (first moment), and variance of the times of flight (second central moment). Moments have a convenient property: the moments of the DTOF can be obtained from calculating the moments of the TPSF and of the IRF straightforwardly. Accordingly, with Flow2, system drift in the DTOF moments can be corrected for, using the internal IRF detector. However, the instrument response function (IRF) can complicate data interpretation in TD-fNIRS. To address this, moment analysis of the distribution of times of flight (DTOF) has been proposed as an alternative to time gates analysis. Higher statistical moments of the DTOF show increased sensitivity to deeper tissue layers.
 
-![flow2](images/flow2.png)
+![flow2](images/DTOF.png)
 
 
 ## Flow 2
+The Kernel Flow2 is an advanced time-domain functional near-infrared spectroscopy (TD-fNIRS) system designed for brain imaging. It uses time gating to discriminate photons based on their time of flight, potentially increasing sensitivity to brain hemodynamics compared to continuous-wave fNIRS, especially when selecting longer-traveling photons.
 
-![dtof](images/DTOF.png)
+The system consists of 40 modules arranged in a headset covering frontal, parietal, temporal, and occipital cortices. Each module contains 3 dual-wavelength sources and 6 detectors, plus a central detector for continuous instrument response function (IRF) monitoring. The modules provide multiple source-detector distances (8.5mm, 17.9mm, and 26.5mm), allowing for measurements at different depths. In total, the system offers 2,565 possible channels with source-detector separations ≤ 50mm.
+The module optics are carefully designed to conduct laser light into the scalp and couple returning light to detectors. They use spring-loaded light pipes to conform to head curvature and reduce interference from hair. Each light pipe is optically isolated to prevent crosstalk. The source optics use a two-lens system with integrated micro-prisms to direct and homogenize light. Similarly, the detector optics use a two-lens system to maintain constant received optical intensity regardless of spring compression.
+A critical feature is the continuous IRF monitoring. Each module has a dedicated IRF detector that captures light directly from the lasers without passing through tissue. This provides reliable estimates of IRF contributions from both detectors and lasers, helping to account for variations due to temperature and voltage changes.
 
-## Resources
+The system uses temporal multiplexing of lasers to avoid optical crosstalk. It operates in a 38-state pattern, completing a full cycle of data collection for all modules and wavelengths every 76 histograms. This results in a system sampling frequency of 3.76 Hz, with each source operating at 7.52 Hz in the full headset configuration. The integration time for constructing histograms is set at 3.5ms, allowing for a histogram sampling rate of 285.7 Hz per wavelength.
 
-We recommend reading the Kernel preprint on the [validation](https://www.biorxiv.org/content/10.1101/2024.04.30.591765v1.abstract) and [reliability](https://www.nature.com/articles/s41598-024-68555-9) of the Flow2 system.
+The Flow2 system incorporates custom-designed detector ASICs with integrated time-to-digital circuitry, capable of handling high photon count rates exceeding 5 Gcps. A novel band-pass coating on the detector packages helps filter out unwanted wavelengths, optimizing signal-to-noise ratio.
 
-- https://github.com/GriffithsLab/kernel-flow-tools
-- https://openfnirs.org/community/
-- mne discussion about snirf compatibility https://github.com/mne-tools/mne-python/pull/9661
-- pysnirf2 https://github.com/BUNPC/pysnirf2/tree/main
-
-## Development
-- going to need something to create BIDS formatted fNIRS datasets
-- going to need to write a data importer for nltools
-
-```{tableofcontents}
-```
+![dtof](images/Flow2.png)

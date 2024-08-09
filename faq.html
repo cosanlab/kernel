@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'faq';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Analyze Finger Tapping Data" href="FingerTapping.html" />
+    <link rel="prev" title="Helpful Resources" href="resources.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,18 +178,26 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acquiring Data</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Signal</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="signal.html">Measurement</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Acquisition</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="acquiring_data.html">Acquiring Data</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="tasks.html">Available Tasks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analyzing Data</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Analysis</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="analyzing_data.html">Analyzing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FingerTapping.html">Analyze Finger Tapping Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing &amp; Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="development.html">Future Development</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Helpful Resources</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">FAQ</a></li>
 </ul>
 
@@ -234,18 +242,50 @@
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/cosanlab/kernel" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-
+<span class="btn__text-container">Repository</span>
 </a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cosanlab/kernel/edit/main/docs/faq.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+  </ul>
+</div>
 
 
 
@@ -373,15 +413,11 @@ document.write(`
 <p>These are answers to questions from Kernel Support</p>
 <section id="details-about-the-nifti-reconstruction">
 <h2>Details about the nifti reconstruction<a class="headerlink" href="#details-about-the-nifti-reconstruction" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><em><strong>What is the sampling frequency of the reconstructed data?</strong></em></p></li>
-</ul>
+<p><em><strong>What is the sampling frequency of the reconstructed data?</strong></em></p>
 <blockquote>
 <div><p>the data is resampled to 1hz before source reconstruction.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>How does the start and stop correspond to the experiment?</strong></em></p></li>
-</ul>
+<p><em><strong>How does the start and stop correspond to the experiment?</strong></em></p>
 <blockquote>
 <div><p>There is a field in the nifti header, <code class="docutils literal notranslate"><span class="pre">toffset</span></code>, which indicates the time of the first volume, with the same reference as the events. Note that the recording is cropped to 1s before the <code class="docutils literal notranslate"><span class="pre">start_experiment</span></code> trigger and 1s after the <code class="docutils literal notranslate"><span class="pre">end_experiment</span></code> trigger as part of the export.</p>
 </div></blockquote>
@@ -394,39 +430,28 @@ document.write(`
 <blockquote>
 <div><p>The pipeline also crops data to 1s before the <code class="docutils literal notranslate"><span class="pre">start_experiment</span></code> event and 1s after the <code class="docutils literal notranslate"><span class="pre">end_experiment</span></code> event. The timestamps of the nirs data are in the nirs/data/time key, and are using the same reference as the timestamps in the events (the first entry in the nirs/stim/data key).</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>How are bad channels treated? Can we remove channels that are nans?</strong></em></p></li>
-</ul>
+<p><em><strong>How are bad channels treated? Can we remove channels that are nans?</strong></em></p>
 <blockquote>
 <div><p>Yes, you can remove the NaNs. The SNIRF format, or maybe it’s Homer, requires (or required at some point) that all channels be present. Since some channels are rejected by our pipeline (not enough light), we fill them with NaNs in the SNIRF export.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>Is there any way to get access to the signal quality of each sensor similar to the subject setup calibration?</strong></em></p></li>
-</ul>
+<p><em><strong>Is there any way to get access to the signal quality of each sensor similar to the subject setup calibration?</strong></em></p>
 <blockquote>
 <div><p>If you download SNIRF: Moments and look at the first moment, it corresponds to the intensity of the light for each channel (as the number of photons received during the 3.5ms integration period), which is a first order measure of signal quality. Note that longer channels get less photons, but are more sensitive to brain activity because the photons travel deeper on average.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>Is there any way to get ROI locations of each module beyond just the 3D coordinates?</strong></em></p></li>
-</ul>
+<p><em><strong>Is there any way to get ROI locations of each module beyond just the 3D coordinates?</strong></em></p>
 <blockquote>
 <div><p>The 3D coordinates are mapped to a MNI atlas. They are on the scalp so obviously won’t fall inside typically MNI atlas ROIs, but you can find the nearest ROI as a first order approximation. Of course, location of the optodes on the MNI head is approximate and won’t be anatomically correct for all subjects, depending on how you place the helmet, their head size, etc. We have been doing more work with localizing optodes on individualized head models, but we are not supporting this type of pipeline in Portal yet.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>Is there any possibility of getting MNE to natively support TD SNIRF files? I saw a thread on their Github, but after a couple of years it seems like the PR has been closed and was never merged.</strong></em></p></li>
-</ul>
+<p><em><strong>Is there any possibility of getting MNE to natively support TD SNIRF files? I saw a thread on their Github, but after a couple of years it seems like the PR has been closed and was never merged.</strong></em></p>
 <blockquote>
 <div><p>Yes, there was some progress a while back, but it stalled. Until now it hasn’t been a priority for us, but as we are shipping more systems we may have to just do it, if nobody else in the community steps up to do it.</p>
 </div></blockquote>
 </section>
 <section id="preprocessing">
 <h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><em><strong>Is there any where to get more details about the preprocessing that has been done to each of the different files beyond the details in the Flow2 preprints? I found references to <a class="reference external" href="http://community.kernel.com">community.kernel.com</a>, but this page doesn’t seem to work anymore.</strong></em></p></li>
-</ul>
+<p><em><strong>Is there any where to get more details about the preprocessing that has been done to each of the different files beyond the details in the Flow2 preprints? I found references to <a class="reference external" href="http://community.kernel.com">community.kernel.com</a>, but this page doesn’t seem to work anymore.</strong></em></p>
 <blockquote>
 <div><p>We’re actually in the process of moving the contents of that (defunct) page to our Kernel docs. In short:</p>
-</div></blockquote>
 <ul class="simple">
 <li><p>SNIRF: Moments. This is a fairly raw output, minimally preprocessed</p></li>
 <li><p>Trim the data to the events (1s before first, 1s after last)</p></li>
@@ -437,26 +462,21 @@ document.write(`
 <li><p>Convert moment changes to hb changes, using a 2-layer slab (12mm scalp) and sensitivities from a FEM model</p></li>
 <li><p>Motion artifact correction: using TDDR, followed by cubic spline interpolation of remaining spikes</p></li>
 <li><p>Global Superficial signal regression, using signal from short channels (8mm)</p></li>
-<li><p>SNIRF: Gated. This is destined to people who want to try something else than moments (time gates, or curve fitting) for their analysis. It starts like SNIRF: Moments, then instead of converting to moments: Deconvolution (using FFT) of the real-time IRF from the histograms
-Reconstruction. This is as described in our recent biorxiv preprint. We use the moments, then downsample to 1Hz, and solve an inverse problem using Tikhonov regularization to constrain the solution.
-I hope this helps. Note that these pipelines are subject to change (which we will track in release notes), as we find better ways to process the signal.</p></li>
-<li><p><em><strong>Is there a canonical HRF function for HbO or HbR that you recommend for GLM style analyses? Or should we just be using the standard fMRI HRF?</strong></em></p></li>
+<li><p>SNIRF: Gated. This is destined to people who want to try something else than moments (time gates, or curve fitting) for their analysis. It starts like SNIRF: Moments, then instead of converting to moments: Deconvolution (using FFT) of the real-time IRF from the histograms Reconstruction. This is as described in our recent biorxiv preprint. We use the moments, then downsample to 1Hz, and solve an inverse problem using Tikhonov regularization to constrain the solution.</p></li>
+<li><p>Note that these pipelines are subject to change (which we will track in release notes), as we find better ways to process the signal.</p></li>
 </ul>
+</div></blockquote>
+<p><em><strong>Is there a canonical HRF function for HbO or HbR that you recommend for GLM style analyses? Or should we just be using the standard fMRI HRF?</strong></em></p>
 <blockquote>
 <div><p>We’ve been using the standard glover HRF provided by nilearn. Our take is that for block designs it doesn’t matter too much, it’s close enough. We haven’t explored using other HRFs.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>Do you have any recommendations for plotting heatmaps of the Reconstructed data?</strong></em></p></li>
-</ul>
+<p><em><strong>Do you have any recommendations for plotting heatmaps of the Reconstructed data?</strong></em></p>
 <blockquote>
 <div><p>Just use your favorite fMRI visualization software for the NIfTI reconstructions. This is in MNI space. Can paint on the surface too.</p>
 </div></blockquote>
-<ul class="simple">
-<li><p><em><strong>Is there an API for accessing web portal?</strong></em></p></li>
-</ul>
+<p><em><strong>Is there an API for accessing web portal?</strong></em></p>
 <blockquote>
 <div><p>here’s a fast way to download all the SNIRF files from a study via <a class="reference external" href="https://docs.kernel.com/docs/downloading-datasets">https://docs.kernel.com/docs/downloading-datasets</a> and running the script within the zip file.</p>
-</div></blockquote>
 <p>Exposing our API is on our roadmap and we can see if we can prioritize it. Just to clarify, you are looking for:</p>
 <ul class="simple">
 <li><p>List all dataset ids and metadata in a study</p></li>
@@ -464,6 +484,7 @@ I hope this helps. Note that these pipelines are subject to change (which we wil
 <li><p>Given a pipeline run id, get its status</p></li>
 <li><p>Given a pipeline run id, download its outputs</p></li>
 </ul>
+</div></blockquote>
 </section>
 </section>
 
@@ -498,12 +519,12 @@ I hope this helps. Note that these pipelines are subject to change (which we wil
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="FingerTapping.html"
+       href="resources.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Analyze Finger Tapping Data</p>
+        <p class="prev-next-title">Helpful Resources</p>
       </div>
     </a>
 </div>
