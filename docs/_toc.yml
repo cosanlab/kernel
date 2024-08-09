@@ -17,7 +17,7 @@ parts:
       - file: BreathHold
       - file: FingerTapping
       - file: GoNoGo
-      - file: NBack
+      - file: nBack
   - caption: Testing & Development
     chapters:
       - file: development
