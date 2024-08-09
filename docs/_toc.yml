@@ -4,14 +4,21 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Acquiring Data
+  - caption: Signal
     numbered: False
     chapters: 
+      - file: signal
+  - caption: Data Acquisition
+    chapters:
       - file: acquiring_data
-  - caption: Analyzing Data
+      - file: tasks
+  - caption: Data Analysis
     chapters:
-      - file: analyzing_data
       - file: FingerTapping
-  - caption: FAQ
+  - caption: Testing & Development
     chapters:
+      - file: development
+  - caption: Resources
+    chapters:
+      - file: resources
       - file: faq
