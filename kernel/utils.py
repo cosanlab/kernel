@@ -33,7 +33,7 @@ def extract_stimulus_data(snirf_file):
         stim_data = {}
         for stim in [x for x in file["nirs"] if "stim" in x]:
             stim_data[file["nirs"][stim]["name"][()].decode("utf-8")] = pd.DataFrame(
-                file["nirs"]["stim1"]["data"][()],
+                file["nirs"][stim]["data"][()],
                 columns=[
                     col.decode("UTF-8") for col in file["nirs"][stim]["dataLabels"]
                 ],

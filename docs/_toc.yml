@@ -14,7 +14,9 @@ parts:
       - file: tasks
   - caption: Data Analysis
     chapters:
+      - file: BreathHold
       - file: FingerTapping
+      - file: GoNoGo
   - caption: Testing & Development
     chapters:
       - file: development
