@@ -1,7 +1,7 @@
 # Kernel Evaluation
 We are currently evaluating the [Flow2](https://www.kernel.com/products) by Kernel as a potential new neuroimaging device to acquire hyperscanning data for the [Consortium for Interacting Minds](https://www.interactingminds.com/)
 
-This website will share information with members of our community about how to acquire and analyze the data. We recommend reading the Kernel preprint on the [validation](https://www.biorxiv.org/content/10.1101/2024.04.30.591765v1.abstract) and [reliability](https://www.nature.com/articles/s41598-024-68555-9) of the Flow2 system.
+This website will share information with members of our community about how to acquire and analyze the data. We recommend reading the Kernel preprint on the [validation](https://direct.mit.edu/imag/article/doi/10.1162/imag_a_00475/127769/A-compact-time-domain-diffuse-optical-tomography) and [reliability](https://www.nature.com/articles/s41598-024-68555-9) of the Flow2 system.
 
 ## Time Domain Functional Near Infrared Spectroscopy (TD-fNIRS)
 
